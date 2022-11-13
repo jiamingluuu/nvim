@@ -1,0 +1,14 @@
+{
+    "suggest.noselect": true,
+    "explorer.icon.enableNerdfont": true,
+
+    "python.autoComplete.addBrackets": true,
+	"python.formatting.provider": "yapf",
+	"python.formatting.yapfArgs": [
+		"--style",
+		"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
+	],
+    "jedi.enable": true,
+
+  "  clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.3/clangd_15.0.3/bin/clangd"
+}
