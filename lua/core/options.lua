@@ -35,7 +35,7 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
-opt.cole = 0
+opt.conceallevel = 0
 
 opt.iskeyword:append("-")
 
