@@ -6,6 +6,7 @@ opt.number = true
 -- tabs and indentation
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.so = 8
 opt.expandtab = true
 
 -- line wrapping
@@ -33,6 +34,8 @@ opt.clipboard:append("unnamedplus")
 -- split windos
 opt.splitright = true
 opt.splitbelow = true
+
+opt.cole = 0
 
 opt.iskeyword:append("-")
 

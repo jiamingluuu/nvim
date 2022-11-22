@@ -38,4 +38,5 @@ keymap.set("n", "<down>", ":res -5<CR>")
 keymap.set("n", "<left>", ":vertical resize -5<CR>")
 keymap.set("n", "<right>", ":vertical resize +5<CR>")
 
-keymap.set("n", "<leader>t", ":rightb vertical terminal<CR>")
+keymap.set("n", "<leader>t", ":!date<CR>")
+keymap.set("n", "E", ":Vista<CR>")

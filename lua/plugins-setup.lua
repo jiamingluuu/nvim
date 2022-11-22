@@ -19,39 +19,50 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-  -- packer can manage itself
-  use("wbthomason/packer.nvim")
-  use("theniceboy/vim-deus")
+    -- packer can manage itself
+    use("wbthomason/packer.nvim")
+    use("theniceboy/vim-deus")
 
-  -- debugger
-  use("puremourning/vimspector")
+    -- debugger
+    use("puremourning/vimspector")
 
-  -- latex
-  use("lervag/vimtex")
-  use("xuhdev/vim-latex-live-preview")
+    -- latex
+    use("lervag/vimtex")
+    use("xuhdev/vim-latex-live-preview")
 
-  -- text edit
-  use("tpope/vim-surround")
-  use("gcmt/wildfire.vim")
-  use("mg979/vim-visual-multi")
-  use("vimwiki/vimwiki")
+    -- text edit
+    use("tpope/vim-surround")
+    use("gcmt/wildfire.vim")
+    use("mg979/vim-visual-multi")
+    use("vimwiki/vimwiki")
 
-  -- fzf
-  -- use { 'junegunn/fzf', run = "fzf#install()" }
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
-  -- coc
-  use {'neoclide/coc.nvim', branch = 'release'}
+    -- fzf
+    -- use { 'junegunn/fzf', run = "fzf#install()" }
+    use("nvim-lua/plenary.nvim")
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    }
 
-  use("liuchengxu/vista.vim")
+    -- coc
+    use {'neoclide/coc.nvim', branch = 'release'}
 
-  use("rhysd/vim-healthcheck")
+    use("liuchengxu/vista.vim")
 
-  --visual effect
-  use("Yggdroot/indentLine")
-  use("glepnir/dashboard-nvim")
-  use("kyazdani42/nvim-web-devicons")
-  use("mg979/vim-xtabline")
-  use{"theniceboy/eleline.vim", branch = "no-scrollbar"}
+    use("rhysd/vim-healthcheck")
+
+    --visual effect
+    use("Yggdroot/indentLine")
+    use("glepnir/dashboard-nvim")
+    use("kyazdani42/nvim-web-devicons")
+    use("nvim-lualine/lualine.nvim")
+    -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use("lukas-reineke/virt-column.nvim")
+    use("numToStr/Comment.nvim")
 
 
 end)
