@@ -17,11 +17,15 @@ if not status then
     return
 end
 
+
 -- add list of plugins to install
 return packer.startup(function(use)
     -- packer can manage itself
     use("wbthomason/packer.nvim")
-    use("theniceboy/vim-deus")
+
+    -- colorschemes
+    use("theniceboy/nvim-deus")
+    use("Mofiqul/vscode.nvim")
 
     -- debugger
     use("puremourning/vimspector")
@@ -35,7 +39,12 @@ return packer.startup(function(use)
     use("gcmt/wildfire.vim")
     use("mg979/vim-visual-multi")
     use("vimwiki/vimwiki")
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
+    -- markdown
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -43,6 +52,8 @@ return packer.startup(function(use)
 
     -- fzf
     -- use { 'junegunn/fzf', run = "fzf#install()" }
+
+    -- telescope
     use("nvim-lua/plenary.nvim")
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -63,7 +74,6 @@ return packer.startup(function(use)
     -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use("lukas-reineke/virt-column.nvim")
     use("numToStr/Comment.nvim")
-    use("nvim-treesitter/nvim-treesitter")
 
-
+    use('nvim-treesitter/nvim-treesitter')
 end)
