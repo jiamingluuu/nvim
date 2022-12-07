@@ -26,6 +26,7 @@ return packer.startup(function(use)
     -- colorschemes
     use("theniceboy/nvim-deus")
     use("Mofiqul/vscode.nvim")
+    use("rebelot/kanagawa.nvim")
 
     -- debugger
     use("puremourning/vimspector")
@@ -37,21 +38,22 @@ return packer.startup(function(use)
     -- text edit
     use("tpope/vim-surround")
     use("gcmt/wildfire.vim")
-    use("mg979/vim-visual-multi")
+    use("mg979/vim-visual-multi")   -- multi-cursor
     use("vimwiki/vimwiki")
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use("numToStr/Comment.nvim")
+
+    -- snippets
+    use("L3MON4D3/LuaSnip")  --snippet engine
 
     -- markdown
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-
-    -- fzf
-    -- use { 'junegunn/fzf', run = "fzf#install()" }
 
     -- telescope
     use("nvim-lua/plenary.nvim")
@@ -60,20 +62,44 @@ return packer.startup(function(use)
     }
 
     -- coc
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- use {'neoclide/coc.nvim', branch = 'release'}
 
+    -- ide-like conifg
     use("liuchengxu/vista.vim")
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      },
+    }
+
+    -- cmp
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+    use('hrsh7th/cmp-cmdline')
+    use('hrsh7th/nvim-cmp')
+
+    use("ray-x/lsp_signature.nvim")
+
+    -- lsp
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
+    use("neovim/nvim-lspconfig")
 
     use("rhysd/vim-healthcheck")
 
     --visual effect
-    use("lukas-reineke/indent-blankline.nvim")
-    use("glepnir/dashboard-nvim")
-    use("kyazdani42/nvim-web-devicons")
+    use("lukas-reineke/indent-blankline.nvim")  -- show indent
+    use("glepnir/dashboard-nvim")   -- starting menu
+    use("kyazdani42/nvim-web-devicons")     -- snazzy icons
     use("nvim-lualine/lualine.nvim")
     -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-    use("lukas-reineke/virt-column.nvim")
-    use("numToStr/Comment.nvim")
+    use("lukas-reineke/virt-column.nvim")   -- verticle bar to 
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
-    use('nvim-treesitter/nvim-treesitter')
+
 end)
