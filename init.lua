@@ -14,6 +14,7 @@ require("plugins.autopairs")
 require("plugins.lualine")
 require("plugins.virtcolumn")
 require("plugins.nvim-treesitter")
+require("plugins.dashboard")
 
 -- file finder
 require("plugins.telescope")
