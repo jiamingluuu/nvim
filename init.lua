@@ -29,3 +29,5 @@ require("plugins.mason")
 require("plugins.mason-lspconfig")
 require("plugins.lspconfig")
 require("plugins.lsp-signature")
+
+require("plugins.toggle_term")

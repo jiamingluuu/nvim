@@ -28,6 +28,7 @@ return packer.startup(function(use)
     use("theniceboy/nvim-deus")
     use("Mofiqul/vscode.nvim")
     use("rebelot/kanagawa.nvim")
+    use("ellisonleao/gruvbox.nvim")
 
     -- debugger
     use("puremourning/vimspector")
@@ -38,7 +39,7 @@ return packer.startup(function(use)
 
     -- text edit
     use("tpope/vim-surround")
-    use("gcmt/wildfire.vim")
+    use("gcmt/wildfire.vim")    -- use ENTER to select chars in parentheses
     use("mg979/vim-visual-multi")   -- multi-cursor
     use("vimwiki/vimwiki")
     use {
@@ -66,13 +67,14 @@ return packer.startup(function(use)
     -- use {'neoclide/coc.nvim', branch = 'release'}
 
     -- ide-like conifg
-    use("liuchengxu/vista.vim")
+    use("simrat39/symbols-outline.nvim")
     use {
       'nvim-tree/nvim-tree.lua',
       requires = {
         'nvim-tree/nvim-web-devicons', -- optional, for file icons
       },
     }
+    use("akinsho/toggleterm.nvim")  -- terminal 
 
     -- cmp
     use('hrsh7th/cmp-nvim-lsp')
@@ -84,19 +86,21 @@ return packer.startup(function(use)
     use("ray-x/lsp_signature.nvim")
 
     -- lsp
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+    use("williamboman/mason.nvim")  -- lsp installer
+    use("williamboman/mason-lspconfig.nvim")    -- bridge mason and lspconfig
     use("neovim/nvim-lspconfig")
 
     use("rhysd/vim-healthcheck")
 
-    --visual effect
+    -- visual effect
     use("lukas-reineke/indent-blankline.nvim")  -- show indent
     use("glepnir/dashboard-nvim")   -- starting menu
     use("kyazdani42/nvim-web-devicons")     -- snazzy icons
     use("nvim-lualine/lualine.nvim")
     -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use("lukas-reineke/virt-column.nvim")   -- verticle bar to 
+
+    -- fancy highlights
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'

@@ -1,3 +1,8 @@
+local status_ok, _ = pcall(require, "lsp_signature")
+if not status_ok then
+    return
+end
+
  cfg = {
   debug = false, -- set to true to enable debug logging
   log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", -- log dir when debug is on
@@ -32,7 +37,7 @@
 
   hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
   handler_opts = {
-    border = "rounded"   -- double, rounded, single, shadow, none, or a table of borders
+    border = "none"   -- double, rounded, single, shadow, none, or a table of borders
   },
 
   always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
@@ -44,8 +49,6 @@
   padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
 
   transparency = nil, -- disabled by default, allow floating win transparent value 1~100
-  shadow_blend = 36, -- if you using shadow as border use this set the opacity
-  shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
   timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
   toggle_key = nil, -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
 

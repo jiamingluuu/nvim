@@ -1,3 +1,8 @@
+local status_ok, _ = pcall(require, "nvim-autopairs")
+if not status_ok then
+    return
+end
+
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
   map_cr = true,

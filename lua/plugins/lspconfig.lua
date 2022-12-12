@@ -37,12 +37,32 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
+-- new icons for diagnostics
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
-require('lspconfig')['pyright'].setup{
+-- enable diagnostic in hover windows
+vim.o.updatetime = 250
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
+-- local lsp_flags = {
+--   -- This is the default in Nvim 0.7+
+--   debounce_text_changes = 150,
+-- }
+
+-- disable inline diagnostic
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false
+    }
+)
+
+-- lsp configs
+require('lspconfig')['jedi_language_server'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
@@ -58,8 +78,9 @@ require('lspconfig')['texlab'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-
-
-
+require('lspconfig')['jdtls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 
 
