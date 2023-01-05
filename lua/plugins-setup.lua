@@ -47,6 +47,14 @@ return packer.startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use("numToStr/Comment.nvim")
+    use {
+        "nvim-neorg/neorg",
+        config = function()
+            require('neorg').setup {
+            }
+        end,
+        requires = "nvim-lua/plenary.nvim"
+    }
 
     -- snippets
     use("L3MON4D3/LuaSnip")  --snippet engine
@@ -97,7 +105,7 @@ return packer.startup(function(use)
     use("glepnir/dashboard-nvim")   -- starting menu
     use("kyazdani42/nvim-web-devicons")     -- snazzy icons
     use("nvim-lualine/lualine.nvim")
-    -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use("lukas-reineke/virt-column.nvim")   -- verticle bar to 
 
     -- fancy highlights

@@ -9,12 +9,14 @@ require("core.colorscheme")
 require("plugins.indent_blankline")
 require("plugins.comment")
 require("plugins.autopairs")
+require("plugins.neorg")
 
--- visual effects
+-- interface
 require("plugins.lualine")
 require("plugins.virtcolumn")
 require("plugins.nvim-treesitter")
 require("plugins.dashboard")
+require("plugins.bufferline")
 
 -- file finder
 require("plugins.telescope")
@@ -31,3 +33,4 @@ require("plugins.lspconfig")
 require("plugins.lsp-signature")
 
 require("plugins.toggle_term")
+require("plugins.symbols-outline")
