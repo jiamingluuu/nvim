@@ -60,10 +60,10 @@ return packer.startup(function(use)
     use("L3MON4D3/LuaSnip")  --snippet engine
 
     -- markdown
-    use({
+    use {
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
-    })
+    }
 
     -- telescope
     use("nvim-lua/plenary.nvim")
