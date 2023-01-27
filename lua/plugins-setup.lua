@@ -102,9 +102,8 @@ return packer.startup(function(use)
 
     -- visual effect
     use("lukas-reineke/indent-blankline.nvim")  -- show indent
-    use("glepnir/dashboard-nvim")   -- starting menu
     use("kyazdani42/nvim-web-devicons")     -- snazzy icons
-    use("nvim-lualine/lualine.nvim")
+    -- use("nvim-lualine/lualine.nvim")
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use("lukas-reineke/virt-column.nvim")   -- verticle bar to 
 

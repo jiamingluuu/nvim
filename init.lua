@@ -12,10 +12,9 @@ require("plugins.autopairs")
 require("plugins.neorg")
 
 -- interface
-require("plugins.lualine")
+-- require("plugins.lualine")
 require("plugins.virtcolumn")
 require("plugins.nvim-treesitter")
-require("plugins.dashboard")
 require("plugins.bufferline")
 
 -- file finder

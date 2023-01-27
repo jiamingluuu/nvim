@@ -1,4 +1,4 @@
-vim.cmd("colorscheme vscode")
+vim.cmd("colorscheme torte")
 
 -- local status, _ = pcall(vim.cmd, "colorscheme deus")
 -- if not status then
