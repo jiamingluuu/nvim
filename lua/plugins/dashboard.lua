@@ -45,16 +45,14 @@ local db = require('dashboard')
 -- }
 
 db.custom_header = {
-"                              VIM - Vi IMproved                                ",
-"                                                                               ",
-"                               version 8.2.4113                                ",
-"                           by Bram Moolenaar et al.                            ",
-"                 Vim is open source and freely distributable                   ",
-"                                                                               ",
-"                        Become a registered Vim user!                          ",
-"                type  :help register<Enter>   for information                  ",
-"                                                                               ",
-"                type  :q<Enter>               to exit                          ",
-"                type  :help<Enter>  or  <F1>  for on-line help                 ",
-"                type  :help version8<Enter>   for version info                 ",
+" _________________________________________  ",
+"/ young man in mathematics you don't      \\ ",
+"| understand things, you just get used to | ",
+"\\ them.                                   / ",
+" -----------------------------------------  ",
+"        \\   ^__^                            ",
+"         \\  (oo)\\_______                    ",
+"            (__)\\       )\\/\\                ",
+"                ||----w |                   ",
+"                ||     ||                   ",
 }
