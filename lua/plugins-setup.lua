@@ -29,6 +29,7 @@ return packer.startup(function(use)
     use("Mofiqul/vscode.nvim")
     use("rebelot/kanagawa.nvim")
     use("ellisonleao/gruvbox.nvim")
+    use{"catppuccin/nvim", as = "catppuccin"}
 
     -- debugger
     use("puremourning/vimspector")
@@ -47,17 +48,21 @@ return packer.startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use("numToStr/Comment.nvim")
+
     use {
         "nvim-neorg/neorg",
-        config = function()
-            require('neorg').setup {
-            }
-        end,
-        requires = "nvim-lua/plenary.nvim"
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
     }
 
     -- snippets
-    use("L3MON4D3/LuaSnip")  --snippet engine
+    use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
+    })
 
     -- markdown
     use {
@@ -113,5 +118,13 @@ return packer.startup(function(use)
         run = ':TSUpdate'
     }
 
+    use {
+        'mrcjkb/haskell-tools.nvim',
+        requires = {
+          'nvim-lua/plenary.nvim',
+          'nvim-telescope/telescope.nvim', -- optional
+        },
+        branch = '1.x.x', -- recommended
+    }
 
 end)

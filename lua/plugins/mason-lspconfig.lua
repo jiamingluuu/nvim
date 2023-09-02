@@ -4,6 +4,6 @@ if not status_ok then
 end
 
 require("mason-lspconfig").setup({
-    ensure_installed = { "sumneko_lua", "clangd", "pyright" },
+    ensure_installed = { "clangd", "pyright" },
     automatic_isntallation = true,
 })

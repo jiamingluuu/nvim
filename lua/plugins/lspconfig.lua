@@ -66,10 +66,6 @@ require('lspconfig')['jedi_language_server'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-require('lspconfig')['sumneko_lua'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -82,5 +78,11 @@ require('lspconfig')['jdtls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-
-
+require('lspconfig')['rust_analyzer'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['hls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}

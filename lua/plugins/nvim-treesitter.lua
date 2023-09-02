@@ -19,5 +19,5 @@ require('nvim-treesitter.configs').setup {
         -- `false` will disable the whole extension
         enable = true,
     },
-    vim.opt.runtimepath:append("~//Users/q/.local/share/nvim/site/pack/packer/start/nvim-treesitter/parser")
+    vim.opt.runtimepath:append("~//Users/q/.local/share/nvim/site/pack/packer/start/nvim-treesitter/parser"),
 }

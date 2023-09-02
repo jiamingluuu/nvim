@@ -1,35 +1,55 @@
-require("plugins-setup")
 require("core.options")
-require("core.keymaps")
-require("core.colorscheme")
--- require("core.coc")
 
--- plugin settings
--- text edit
-require("plugins.indent_blankline")
-require("plugins.comment")
-require("plugins.autopairs")
-require("plugins.neorg")
+if vim.g.vscode then
+    -- VSCode extension
+    vim.keymap.set("n", "H", "5h")
+    vim.keymap.set("n", "J", "5j")
+    vim.keymap.set("n", "K", "5k")
+    vim.keymap.set("n", "L", "5l")
+    vim.keymap.set("n", "C", "J")
 
--- interface
--- require("plugins.lualine")
-require("plugins.virtcolumn")
-require("plugins.nvim-treesitter")
-require("plugins.bufferline")
+    vim.keymap.set("v", "H", "5h")
+    vim.keymap.set("v", "J", "5j")
+    vim.keymap.set("v", "K", "5k")
+    vim.keymap.set("v", "L", "5l")
 
--- file finder
-require("plugins.telescope")
-require("plugins.nvim-tree")
+    vim.opt.so = 8
+else
+    require("core.keymaps")
+    require("plugins.comment")
+    -- ordinary Neovim
+    require("core.keymaps")
 
--- language support
-require("plugins.vimtex")
-require("plugins.markdownpreview")
-require("plugins.cmp")
+    require("plugins-setup")
+    require("core.colorscheme")
+    -- require("core.coc")
 
-require("plugins.mason")
-require("plugins.mason-lspconfig")
-require("plugins.lspconfig")
-require("plugins.lsp-signature")
+    -- plugin settings
+    -- text edit
+    require("plugins.indent_blankline")
+    require("plugins.autopairs")
+    require("plugins.neorg")
 
-require("plugins.toggle_term")
-require("plugins.symbols-outline")
+    -- interface
+    -- require("plugins.lualine")
+    require("plugins.virtcolumn")
+    require("plugins.nvim-treesitter")
+    require("plugins.bufferline")
+
+    -- file finder
+    require("plugins.telescope")
+    require("plugins.nvim-tree")
+
+    -- language support
+    require("plugins.vimtex")
+    require("plugins.markdownpreview")
+    require("plugins.cmp")
+
+    require("plugins.mason")
+    require("plugins.mason-lspconfig")
+    require("plugins.lspconfig")
+    require("plugins.lsp-signature")
+
+    require("plugins.toggle_term")
+    require("plugins.symbols-outline")
+end

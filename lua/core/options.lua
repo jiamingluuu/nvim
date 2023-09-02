@@ -3,7 +3,6 @@ local opt = vim.opt -- for conciseness
 -- line numbers
 opt.number = true
 
-
 -- tabs and indentation
 opt.tabstop = 4
 opt.shiftwidth = 4
@@ -43,4 +42,3 @@ opt.iskeyword:append("-")
 -- codes auto-folded after downloading nvim-treesitter, so the following is added
 opt.foldlevel = 999
 opt.laststatus = 0
-

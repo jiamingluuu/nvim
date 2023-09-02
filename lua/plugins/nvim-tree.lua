@@ -1,23 +1,20 @@
-local status_ok, _ = pcall(require, "nvim-tree")
-if not status_ok then
-    return
+local function my_on_attach(bufnr)
+    local api = require "nvim-tree.api"
+
+    local function opts(desc)
+        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    -- default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- custom mappings
+    vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
+    vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
 end
 
-require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-        adaptive_size = true,
-        mappings = {
-            list = {
-                { key = "u", action = "dir_up" },
-            },
-        },
-    },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = true,
-    },
-})
-vim.keymap.set("n", "tt", ":NvimTreeToggle<CR>")
+-- pass to setup along with your other options
+require("nvim-tree").setup {
+    on_attach = my_on_attach,
+    vim.keymap.set("n", "tt", ":NvimTreeToggle<CR>")
+}

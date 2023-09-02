@@ -1,21 +1,13 @@
-require("neorg").setup {
+require('neorg').setup {
     load = {
-        ["core.defaults"] = {},
-        ["core.norg.dirman"] = {
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
                 workspaces = {
-                    work = "~/notes/work",
-                    home = "~/notes/home",
-                }
-            }
+                    notes = "~/neorg_notes",
+                },
+            },
         },
-        ["core.norg.completion"] = {
-            config = {
-                engine = "nvim-cmp",
-            }
-        },
-
-        ["core.norg.concealer"] = {},
-        ["core.norg.esupports.indent"] = {},
-    }
+    },
 }
