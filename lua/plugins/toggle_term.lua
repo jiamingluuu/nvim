@@ -12,10 +12,11 @@ require("toggleterm").setup{
       return vim.o.columns * 0.4
     end
   end,
-  direction = "vertical",
+  direction = "float",
   size = 80,
 
-  vim.keymap.set("n", "<leader>T", ":ToggleTerm<CR>"),
+  vim.keymap.set("n", "<leader>ft", ":ToggleTerm direction=float<CR>"),
+  vim.keymap.set("n", "<leader>T", ":ToggleTerm direction=vertical<CR>"),
 
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts),
   vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts),

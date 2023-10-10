@@ -1,6 +1,6 @@
 -- vim.cmd("colorscheme kanagawa-wave")
 -- vim.cmd("colorscheme vscode")
--- vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme gruvbox")
 
 -- local status, _ = pcall(vim.cmd, "colorscheme deus")
 -- if not status then
@@ -45,4 +45,4 @@ require("catppuccin").setup {
     },
 }
 
-vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme kanagawa-wave")

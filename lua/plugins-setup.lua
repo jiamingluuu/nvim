@@ -57,11 +57,11 @@ return packer.startup(function(use)
 
     -- snippets
     use({
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!:).
-	run = "make install_jsregexp"
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
     })
 
     -- markdown
@@ -75,9 +75,6 @@ return packer.startup(function(use)
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
     }
-
-    -- coc
-    -- use {'neoclide/coc.nvim', branch = 'release'}
 
     -- ide-like conifg
     use("simrat39/symbols-outline.nvim")
