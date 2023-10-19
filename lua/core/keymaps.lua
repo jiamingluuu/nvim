@@ -3,16 +3,16 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- general keymaps
-keymap.set("n", "H", "5h")
+keymap.set("n", "H", "0")
 keymap.set("n", "J", "5j")
 keymap.set("n", "K", "5k")
-keymap.set("n", "L", "5l")
+keymap.set("n", "L", "$")
 keymap.set("n", "C", "J")
 
-keymap.set("v", "H", "5h")
+keymap.set("v", "H", "0")
 keymap.set("v", "J", "5j")
 keymap.set("v", "K", "5k")
-keymap.set("v", "L", "5l")
+keymap.set("v", "L", "$")
 
 keymap.set("n", "Q", ":q<CR>")
 keymap.set("n", "S", ":w<CR>")

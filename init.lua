@@ -22,7 +22,6 @@ else
 
     require("plugins-setup")
     require("core.colorscheme")
-    -- require("core.coc")
 
     -- plugin settings
     -- text edit
@@ -35,6 +34,7 @@ else
     require("plugins.virtcolumn")
     require("plugins.nvim-treesitter")
     require("plugins.bufferline")
+    require("plugins.gitsigns")
 
     -- file finder
     require("plugins.telescope")

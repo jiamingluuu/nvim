@@ -31,9 +31,6 @@ return packer.startup(function(use)
     use("ellisonleao/gruvbox.nvim")
     use{"catppuccin/nvim", as = "catppuccin"}
 
-    -- debugger
-    use("puremourning/vimspector")
-
     -- latex
     use("lervag/vimtex")
     use("xuhdev/vim-latex-live-preview")
@@ -42,17 +39,14 @@ return packer.startup(function(use)
     use("tpope/vim-surround")
     use("gcmt/wildfire.vim")    -- use ENTER to select chars in parentheses
     use("mg979/vim-visual-multi")   -- multi-cursor
-    use("vimwiki/vimwiki")
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
     use("numToStr/Comment.nvim")
-
     use {
         "nvim-neorg/neorg",
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
+        run = ":Neorg sync-parsers", -- This is the important bit!
     }
 
     -- snippets
@@ -85,6 +79,7 @@ return packer.startup(function(use)
       },
     }
     use("akinsho/toggleterm.nvim")  -- terminal 
+    use("lewis6991/gitsigns.nvim")
 
     -- cmp
     use('hrsh7th/cmp-nvim-lsp')
@@ -105,23 +100,14 @@ return packer.startup(function(use)
     -- visual effect
     use("lukas-reineke/indent-blankline.nvim")  -- show indent
     use("kyazdani42/nvim-web-devicons")     -- snazzy icons
-    -- use("nvim-lualine/lualine.nvim")
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use("lukas-reineke/virt-column.nvim")   -- verticle bar to 
+    use("folke/zen-mode.nvim")
 
     -- fancy highlights
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
-    }
-
-    use {
-        'mrcjkb/haskell-tools.nvim',
-        requires = {
-          'nvim-lua/plenary.nvim',
-          'nvim-telescope/telescope.nvim', -- optional
-        },
-        branch = '1.x.x', -- recommended
     }
 
 end)

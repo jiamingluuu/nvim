@@ -1,5 +1,5 @@
 local opt = vim.opt -- for conciseness
-
+opt.guifont = { "MesloLGLDZ NFM", "h12" }
 -- line numbers
 opt.number = true
 
